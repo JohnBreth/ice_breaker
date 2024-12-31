@@ -1,0 +1,6 @@
+tasks:
+  - name: Python Setup
+    before: pip install --user pipenv
+    init: pipenv install
+    command: pipenv shell
+    
