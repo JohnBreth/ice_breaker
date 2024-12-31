@@ -7,7 +7,6 @@ tasks:
     command: |
       pipenv shell
       pipenv install python-dotenv
-    command: |
       echo "Environment ready!"
 
 vscode:
