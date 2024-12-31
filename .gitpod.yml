@@ -1,0 +1,12 @@
+tasks:
+  - name: Install Python Dependencies
+    init: |
+      pip install --user pipenv
+      pipenv shell
+      pipenv install langchain langchain-openai langchain-community langchainhub black python-dotenv
+    command: |
+      echo "Environment ready!"
+
+vscode:
+  extensions:
+    - ms-python.python
