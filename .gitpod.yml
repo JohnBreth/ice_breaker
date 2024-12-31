@@ -4,6 +4,8 @@ tasks:
       pip install --user pipenv
       pipenv shell
       pipenv install langchain langchain-openai langchain-community langchainhub black
+    command: |
+      pipenv shell
       pipenv install python-dotenv
     command: |
       echo "Environment ready!"
