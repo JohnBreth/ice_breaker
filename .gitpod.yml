@@ -3,6 +3,7 @@ tasks:
     before: pip install --user pipenv
     init: |  
       unset PIP_USER
+      unset PROMPT_COMMAND
       pipenv install
       pipenv install python-dotenv
     command: |
