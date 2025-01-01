@@ -2,11 +2,11 @@ tasks:
   - name: Python Setup
     before: pip install --user pipenv
     init: |  
-    unset PIP_USER
-    pipenv install
-    pipenv install python-dotenv
-  command: |
-    pipenv shell
+      unset PIP_USER
+      pipenv install
+      pipenv install python-dotenv
+    command: |
+      pipenv shell
 
 vscode:
   extensions:
