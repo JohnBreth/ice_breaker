@@ -9,6 +9,16 @@ tasks:
     command: |
       pipenv shell
 
+  - name: Restore .env file
+    command: |
+      if [ -f .env ]; then
+        echo "Found .env in workspace"
+      else
+        echo "Creating .env file"
+        echo "VARIABLE_NAME=${VARIABLE_NAME}" > .env
+      fi
+
+
 vscode:
   extensions:
     - ms-python.python
