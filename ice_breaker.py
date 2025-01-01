@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 from langchain.prompts.prompt import PromptTemplate
 from langchain_openai import ChatOpenAI
+from langchain_core.output_parsers import StrOutputParser
+
 
 information = """
     John Breth is an Experienced architect, author, and IT consulting firm founder with a demonstrated history of working in the information technology and services industry. 
@@ -25,7 +27,7 @@ if __name__ == "__main__":
 
     llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
 
-    chain = summary_prompt_template | llm
+    chain = summary_prompt_template | llm | StrOutputParser()
 
     res = chain.invoke(input={"information": information})
 
