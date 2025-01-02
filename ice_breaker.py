@@ -2,13 +2,7 @@ from dotenv import load_dotenv
 from langchain.prompts.prompt import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import StrOutputParser
-
-
-information = """
-    John Breth is an Experienced architect, author, and IT consulting firm founder with a demonstrated history of working in the information technology and services industry. 
-    Skilled in IT Strategy, Information Assurance, Information Security, Enterprise Architecture, and Systems Engineering. 
-    Strong business development professional with a Master of Science (MS) focused in Information Technology from The Johns Hopkins University - Carey Business School. 
-    """
+from third_parties.linkedin import scrape_linkedin_profile
 
 if __name__ == "__main__":
     load_dotenv()
@@ -28,7 +22,10 @@ if __name__ == "__main__":
     llm = ChatOpenAI(temperature=0, model_name="gpt-4o-mini")
 
     chain = summary_prompt_template | llm | StrOutputParser()
+    linkedin_data = scrape_linkedin_profile(
+        linkedin_profile_url="https://www.linkedin.com/in/john-breth/"
+    )
 
-    res = chain.invoke(input={"information": information})
+    res = chain.invoke(input={"information": linkedin_data})
 
     print(res)
