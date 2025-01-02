@@ -1,4 +1,6 @@
+import os
 from dotenv import load_dotenv
+from tools.tools import get_profile_url_tavily
 
 load_dotenv()
 from langchain_openai import ChatOpenAI
@@ -9,7 +11,7 @@ from langchain.agents import (
     AgentExecutor,
 )
 from langchain import hub
-from tools.tools import get_profile_url_tavily
+
 
 
 def lookup(name: str) -> str:
@@ -44,4 +46,4 @@ def lookup(name: str) -> str:
 
 
 if __name__ == "__main__":
-    print(lookup(name="Eden Marco Udemy"))
+    print(lookup(name="John Breth"))
