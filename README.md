@@ -17,6 +17,7 @@ pipenv install langchain-community
 pipenv install langchainhub
 pipenv install black
 pipenv install python-dotenv
+pipenv install tweepy
 ```
 
 ## How to add gp envar:
