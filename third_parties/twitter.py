@@ -23,8 +23,8 @@ def scrape_user_tweets(username, num_tweets=5, mock: bool = False):
     tweet_list = []
 
     if mock:
-        EDEN_TWITTER_GIST = "https://gist.githubusercontent.com/emarco177/827323bb599553d0f0e662da07b9ff68/raw/57bf38cf8acce0c87e060f9bb51f6ab72098fbd6/eden-marco-twitter.json"
-        tweets = requests.get(EDEN_TWITTER_GIST, timeout=5).json()
+        JOHN_TWITTER_GIST = "https://gist.githubusercontent.com/JohnBreth/c61f50d83e59142b613eacf2a02e4d0b/raw/52fbb4db72a567b58f897180c989fd567bcc5a4d/john-breth-tweets.json"
+        tweets = requests.get(JOHN_TWITTER_GIST, timeout=5).json()
 
     else:
         user_id = twitter_client.get_user(username=username).data.id
@@ -44,5 +44,5 @@ def scrape_user_tweets(username, num_tweets=5, mock: bool = False):
 
 if __name__ == "__main__":
 
-    tweets = scrape_user_tweets(username="EdenEmarco177", mock=True)
+    tweets = scrape_user_tweets(username="JBizzle703", mock=True)
     print(tweets)
