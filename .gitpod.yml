@@ -6,6 +6,7 @@ tasks:
       unset PROMPT_COMMAND
       pipenv install
       pipenv install python-dotenv
+      pipenv install Flask
     command: |
       pipenv shell
 
